@@ -4,7 +4,7 @@ var rejectMsg = '<?xml version="1.0" encoding="UTF-8"?><Response><Reject /></Res
 
 var app = express.createServer(express.logger());
 
-app.get('/', function(request, response) {
+app.post('/', function(request, response) {
   response.send(rejectMsg);
 });
 
