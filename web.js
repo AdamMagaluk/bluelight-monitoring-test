@@ -2,9 +2,15 @@ var express = require('express');
 
 var rejectMsg = '<?xml version="1.0" encoding="UTF-8"?><Response><Reject /></Response>'
 
-var app = express.createServer(express.logger());
+var app = express.createServer();
 
-app.post('/', function(request, response) {
+app.configure(function(){
+  app.use(express.bodyParser())
+});
+
+
+app.get('/', function(request, response) {
+  console.log("Call From: " + request.query.From)
   response.send(rejectMsg);
 });
 
