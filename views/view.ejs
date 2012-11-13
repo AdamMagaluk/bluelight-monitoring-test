@@ -1,0 +1,6 @@
+<h1>Phone Checkins</h1>
+<ul class="checkins">
+    <% logs.forEach(function(log){ %>
+        <li><b><%= log.Date%></b> - <%= log.From%> </li>
+    <% }) %>
+</ul>
